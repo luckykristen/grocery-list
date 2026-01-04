@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 
 const CATEGORIES = [
-  { id: "dairy", label: "Dairy", emoji: "🥛" },
-  { id: "veg", label: "Veg", emoji: "🥦" },
-  { id: "fruit", label: "Fruit", emoji: "🍎" },
-  { id: "bakery", label: "Bakery", emoji: "🍞" },
-  { id: "meat", label: "Meat", emoji: "🥩" },
-  { id: "pantry", label: "Pantry", emoji: "🧂" },
-  { id: "home", label: "Home", emoji: "🧼" },
+  { id: "dairy", label: "Mléčné", emoji: "🥛" },
+  { id: "veg", label: "Zelenina", emoji: "🥦" },
+  { id: "fruit", label: "Ovoce", emoji: "🍎" },
+  { id: "bakery", label: "Pečivo", emoji: "🥐" },
+  { id: "meat", label: "Maso", emoji: "🥩" },
+  { id: "pantry", label: "Trvanlivé", emoji: "🧂" },
+  { id: "home", label: "Domov", emoji: "🧼" },
 ];
 
 function uid() {
@@ -124,10 +124,10 @@ export default function App() {
             <div className="mt-5 flex items-start justify-between gap-4">
               <div>
                 <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">
-                  Grocery List
+                  Nákupní seznam
                 </h1>
                 <p className="mt-1 text-sm text-slate-500">
-                  {stats.total} items • {stats.done} done
+                  {stats.total} položka • {stats.done} hotovo
                 </p>
               </div>
 
@@ -143,7 +143,7 @@ export default function App() {
                         : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
                     }`}
                   >
-                    {k === "all" ? "All" : k === "active" ? "Active" : "Done"}
+                    {k === "all" ? "Vše" : k === "active" ? "Koupit" : "Hotovo"}
                   </button>
                 ))}
               </div>
@@ -166,7 +166,7 @@ export default function App() {
                   type="submit"
                   className="shrink-0 rounded-2xl bg-emerald-500 px-4 py-3 font-bold text-white shadow-sm transition hover:brightness-105 active:scale-[0.98]"
                 >
-                  + Add
+                  + Přidat
                 </button>
               </div>
 
@@ -204,7 +204,7 @@ export default function App() {
                     : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
                 }`}
               >
-                🧺 All
+                🧺 Všechno
               </button>
 
               {CATEGORIES.map((c) => (
@@ -290,14 +290,14 @@ export default function App() {
             <div className="rounded-2xl border border-slate-100 bg-white p-4">
               <div className="flex items-center justify-between">
                 <p className="text-sm font-semibold text-slate-800">
-                  Done {stats.done}/{stats.total}
+                  Hotovo {stats.done}/{stats.total}
                 </p>
                 <button
                   type="button"
                   onClick={clearDone}
                   className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700 ring-1 ring-teal-100 hover:bg-teal-100 transition"
                 >
-                  Clear done
+                  Vymazat hotové
                 </button>
               </div>
 
@@ -308,7 +308,7 @@ export default function App() {
                 />
               </div>
 
-              <p className="mt-3 text-xs text-slate-400">Saved locally ✅</p>
+              <p className="mt-3 text-xs text-slate-400">Uloženo lokálně ✅</p>
             </div>
           </div>
         </div>
