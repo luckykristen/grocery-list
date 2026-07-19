@@ -173,12 +173,16 @@ export default function App() {
               {error ? <p className="text-sm text-pink-600">{error}</p> : null}
 
               <div className="flex flex-wrap gap-2">
+                <p
+                className= {`rounded-full px-3 py-2 text-xs font-semibold ring-1 bg-teal-50 ring-teal-300`}
+              >Kategorie:
+              </p>
                 {CATEGORIES.map((c) => (
                   <button
                     key={c.id}
                     type="button"
                     onClick={() => setCategory(c.id)}
-                    className={`rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
+                    className={`cursor-pointer rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
                       category === c.id
                         ? "bg-teal-50 text-teal-700 ring-teal-200"
                         : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
@@ -195,10 +199,14 @@ export default function App() {
           {/* Category filter */}
           <div className="px-6 pb-3">
             <div className="flex flex-wrap gap-2">
+              <p
+                className= {`rounded-full px-3 py-2 text-xs font-semibold ring-1 bg-indigo-50 ring-indigo-300`}
+              >Filtrování:
+              </p>
               <button
                 type="button"
                 onClick={() => setActiveCat("all")}
-                className={`rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
+                className={`cursor-pointer rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
                   activeCat === "all"
                     ? "bg-indigo-50 text-indigo-700 ring-indigo-200"
                     : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
@@ -212,7 +220,7 @@ export default function App() {
                   key={c.id}
                   type="button"
                   onClick={() => setActiveCat(c.id)}
-                  className={`rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
+                  className={`cursor-pointer rounded-full px-3 py-2 text-xs font-semibold ring-1 transition ${
                     activeCat === c.id
                       ? "bg-indigo-50 text-indigo-700 ring-indigo-200"
                       : "bg-white text-slate-600 ring-slate-200 hover:bg-slate-50"
